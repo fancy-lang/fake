@@ -9,7 +9,7 @@ Fake tasks: {
   clean: {
     desc: "Clean all *.fyc files"
     run: {
-      sh: ("rm", "-rf", Directory list: "**/*.fyc")
+      sh: ("rm", "-rf", Directory list: "**/*.fyc") verbose: true
     }
   }
 }
