@@ -1,0 +1,5 @@
+#!/usr/bin/env fancy
+
+require: "../lib/fake"
+
+Fake CLI handle_arguments: ARGV
