@@ -1,10 +1,14 @@
 class Fake
 
+require: "fake/cli"
 require: "fake/task"
 require: "fake/task_builder"
-require: "fake/cli"
 
 class Fake {
+  def Fake fakefile: fakefile {
+    @fakefile = fakefile
+  }
+
   def Fake tasks {
     @tasks || []
   }
@@ -13,9 +17,9 @@ class Fake {
     @tasks = TaskBuilder new: block . tasks
   }
 
-  def Fake read_fakefile: fakefile ("Fakefile") {
+  def Fake read_fakefile {
     try {
-      File eval: fakefile
+      File eval: @fakefile
     } catch Errno::ENOENT => e {
       *stderr* println: e
       System exit: 1

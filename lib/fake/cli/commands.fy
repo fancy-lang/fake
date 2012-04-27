@@ -3,4 +3,5 @@ class Fake CLI {
 }
 
 require: "commands/show_tasks"
+require: "commands/show_help"
 require: "commands/run_task"
