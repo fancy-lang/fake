@@ -38,6 +38,32 @@ To see a list of general options use the help command:
 $ fake --help
 ```
 
+## Namespaces
+
+You can place tasks in namespaces by placing them inside a named block
+that doesn't contain its own `run` option:
+
+```fancy
+Fake tasks: {
+  namespace_a: {
+    task_a: {
+      run: {
+        # ...
+      }
+    }
+  }
+
+  namespace_b: {
+    task_b: {
+      depends: 'namespace_a:task_a
+      run: {
+        # ...
+      }
+    }
+  }
+}
+```
+
 ## Specifying dependencies
 
 You can specify dependencies via the `depends` option, like so:
