@@ -28,9 +28,7 @@ class Fake CLI {
 
     def parse_argv: argv {
       @args = Args new: argv
-      @fakefile = @args parse_option: "-f"
       @tasks = @args tasks
-      Fake fakefile: @fakefile
     }
 
     def handle_tasks {

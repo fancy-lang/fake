@@ -12,6 +12,10 @@ class Fake {
     @fakefile = fakefile
   }
 
+  def Fake fakefile {
+    @fakefile || "Fakefile"
+  }
+
   def Fake tasks {
     @tasks
   }
@@ -22,7 +26,7 @@ class Fake {
 
   def Fake read_fakefile {
     try {
-      File eval: @fakefile
+      File eval: fakefile
     } catch Errno::ENOENT => e {
       *stderr* println: e
       System exit: 1

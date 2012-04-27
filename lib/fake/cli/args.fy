@@ -2,7 +2,6 @@ class Fake {
   class CLI {
     class Args {
       Defaults = <[
-        "-f" => "Fakefile"
       ]>
 
       def initialize: @argv
