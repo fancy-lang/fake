@@ -4,6 +4,7 @@ require: "fake/cli"
 require: "fake/task_utils"
 require: "fake/task"
 require: "fake/task_builder"
+require: "fake/version"
 
 class Fake {
   @tasks = <[]>
