@@ -38,6 +38,31 @@ To see a list of general options use the help command:
 $ fake --help
 ```
 
+## Specifying dependencies
+
+You can specify dependencies via the `depends` option, like so:
+
+```fancy
+Fake tasks: {
+  task_a: {
+    desc: "This task shall be run before task_b"
+    run: {
+      "Running task a" println
+    }
+  }
+
+  task_b: {
+     desc: "This tasks depends on task_a"
+     depends: 'task_a # pass an array of task names if you depend on more than one task
+     run: {
+       "Running task b" println
+     }
+  }
+}
+```
+
+When no task is specified the `default` task will be run (as with Rake).
+
 ## Note:
 
 This is still in the making. More features coming soon, but defining

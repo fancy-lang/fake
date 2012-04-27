@@ -10,7 +10,7 @@ class Fake {
     }
 
     def run {
-      @dependencies map: |d| { Fake tasks[d to_sym] } . each: @{ run }
+      @dependencies to_a map: |d| { Fake tasks[d to_sym] } . each: @{ run }
 
       unless: ran? do: {
         @block call_with_receiver: self

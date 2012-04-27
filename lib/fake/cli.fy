@@ -37,7 +37,9 @@ class Fake CLI {
       Fake read_fakefile
 
       @tasks each: |t| {
-        Fake tasks[t to_sym] . run
+        if: (Fake tasks[t to_sym]) then: @{ run } else: {
+          System abort: "Task '#{t}' not defined. Aborting."
+        }
       }
     }
 
