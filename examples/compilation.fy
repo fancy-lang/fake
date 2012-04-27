@@ -4,7 +4,7 @@ Fake tasks: @{
   default: @{
     desc: "Compile all *.fy files"
     depends: []
-    run: {
+    run: @{
       sh: ("fancy", "-c", Directory find: "./**/*.fy")
     }
   }
