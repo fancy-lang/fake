@@ -1,7 +1,11 @@
-# Fake - Fancy automation
+# Fake - Fancy Make
 
-Fake is a new work-in-progress build and automation tool for Fancy,
-similar to Ruby's Rake.
+Fake is a build and automation tool for
+[Fancy](http://www.fancy-lang.org), similar to Ruby's Rake.
+You write your tasks in pure Fancy code, by default saving them to
+`Fakefile`s.
+
+A standard collection of common Fake tasks will be added soon.
 
 ## Installation
 
@@ -107,5 +111,5 @@ When no task is specified the `default` task will be run (as with Rake).
 
 ## Note:
 
-This is still in the making. More features coming soon, but defining
-basic tasks and dependencies between them works fine already.
+This is still in the making. More features are coming soon, but defining
+basic tasks and dependencies between them works already.
