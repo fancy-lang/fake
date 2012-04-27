@@ -7,14 +7,14 @@ similar to Ruby's Rake.
 
 To install Fake use Fancy's built-in package system:
 
-```fancy
+```
 $ fancy install fancy-lang/fake
 ```
 
 Also make sure that `~/.fancy/packages/bin` is in your `$PATH`
 environment variable. Set it in your `~/.bash_profile` or similar:
 
-```fancy
+```
 export PATH=$PATH:~/.fancy/packages/bin
 ```
 
