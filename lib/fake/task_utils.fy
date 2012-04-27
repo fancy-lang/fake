@@ -8,7 +8,6 @@ class Fake {
         }
       }
       cmd = cmd join: " "
-      "#{cmd}" println
       System do: cmd
     }
   }
