@@ -1,6 +1,6 @@
 class Fake {
   class TaskUtils {
-    def sh: shell_args {
+    def sh: shell_args verbose: verbose (false) {
       cmd = []
       shell_args to_a each: |arg| {
         arg to_a each: |x| {
@@ -8,6 +8,7 @@ class Fake {
         }
       }
       cmd = cmd join: " "
+      { cmd println } if: verbose
       System do: cmd
     }
   }
