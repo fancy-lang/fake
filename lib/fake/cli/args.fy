@@ -6,11 +6,21 @@ class Fake {
       ]>
 
       def initialize: @argv
+
       def parse_option: opt {
         if: (@argv index: opt) then: |idx| {
-          @argv[idx + 1]
+          @argv remove_at: idx
+          val = @argv[idx]
+          @argv remove_at: idx
         } else: {
           Defaults[opt]
+        }
+      }
+
+      def tasks {
+        match @argv size {
+          case 0 -> ["default"]
+          case _ -> @argv
         }
       }
     }

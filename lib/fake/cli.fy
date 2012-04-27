@@ -29,11 +29,16 @@ class Fake CLI {
     def parse_argv: argv {
       @args = Args new: argv
       @fakefile = @args parse_option: "-f"
+      @tasks = @args tasks
       Fake fakefile: @fakefile
     }
 
     def handle_tasks {
+      Fake read_fakefile
 
+      @tasks each: |t| {
+        Fake tasks[t to_sym] . run
+      }
     }
 
     def register_command: command_class {

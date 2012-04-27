@@ -2,4 +2,4 @@
 
 require: "../lib/fake"
 
-Fake CLI handle_arguments: ARGV
+Fake CLI handle_arguments: $ ARGV rest
