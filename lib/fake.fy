@@ -28,8 +28,7 @@ class Fake {
     try {
       File eval: fakefile
     } catch Errno::ENOENT => e {
-      *stderr* println: e
-      System exit: 1
+      System abort: e
     }
   }
 }
