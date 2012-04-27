@@ -6,7 +6,7 @@ require: "fake/cli"
 
 class Fake {
   def Fake tasks: block {
-    TasksBuilder new: block . tasks
+    TaskBuilder new: block . tasks
   }
 
   def Fake read_fakefile: fakefile ("Fakefile") {
