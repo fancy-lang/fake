@@ -28,14 +28,13 @@ class Fake CLI {
 
     def parse_argv: argv {
       @args = Args new: argv
-      @tasks = @args tasks
     }
 
     def handle_tasks {
       Fake read_fakefile
 
-      @tasks each: |t| {
-        if: (Fake tasks[t to_sym]) then: @{ run } else: {
+      @args tasks each: |t| {
+        if: (Fake tasks[t]) then: @{ run } else: {
           System abort: "Task '#{t}' not defined. Aborting."
         }
       }

@@ -2,15 +2,17 @@ class Fake {
   class Task {
     include: TaskUtils
 
-    read_slots: ('name, 'description, 'block, 'dependencies)
-    def initialize: @name description: @description block: @block ({}) dependencies: @dependencies ([]);
+    read_write_slots: ('name, 'description, 'block, 'dependencies)
+    def initialize: @name description: @description block: @block ({}) dependencies: @dependencies ([]) {
+      @name = @name to_s
+    }
 
     def ran? {
       @ran? true?
     }
 
     def run {
-      @dependencies to_a map: |d| { Fake tasks[d to_sym] } . each: @{ run }
+      @dependencies to_a map: |d| { Fake tasks[d to_s] } . each: @{ run }
 
       unless: ran? do: {
         @block call_with_receiver: self

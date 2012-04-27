@@ -10,8 +10,8 @@ class Fake CLI Commands {
       # find max name width
       Fake read_fakefile
       max_width = Fake tasks values map: @{ name to_s size } . max
-      Fake tasks each: |name t| {
-        *stdout* printf("fake %-#{max_width}s  |  %s\n", name, t description)
+      Fake tasks values sort_by: 'name . each: |t| {
+        *stdout* printf("fake %-#{max_width}s  |  %s\n", t name, t description)
       }
 
       System exit: 0
