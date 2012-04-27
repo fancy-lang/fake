@@ -1,7 +1,7 @@
 class Fake CLI {
   class Command {
     class ClassMethods {
-      read_write_slots: ('command_name, 'option_flag, 'expects_argument)
+      read_write_slots: ('command_name, 'option_flag, 'expects_argument?)
     }
 
     def self included: command_class {

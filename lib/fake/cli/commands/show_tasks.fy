@@ -4,7 +4,7 @@ class Fake CLI Commands {
 
     command_name: "Show available tasks"
     option_flag: "-T"
-    expects_argument: false
+    expects_argument?: false
 
     def run {
       # find max name width

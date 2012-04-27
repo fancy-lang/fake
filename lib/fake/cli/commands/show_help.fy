@@ -4,7 +4,7 @@ class Fake CLI Commands {
 
     command_name: "Show this help message"
     option_flag: "--help"
-    expects_argument: false
+    expects_argument?: false
 
     def run {
       # find max command width

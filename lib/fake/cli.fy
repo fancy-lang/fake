@@ -15,7 +15,7 @@ class Fake CLI {
       commands each: |c| {
         flag = c option_flag
         if: (argv includes?: flag) then: {
-          if: (c expects_argument) then: {
+          if: (c expects_argument?) then: {
             c new run: (@args parse_option: flag)
           } else: {
             c new run
