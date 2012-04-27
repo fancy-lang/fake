@@ -5,8 +5,12 @@ require: "fake/task_builder"
 require: "fake/cli"
 
 class Fake {
+  def Fake tasks {
+    @tasks || []
+  }
+
   def Fake tasks: block {
-    TaskBuilder new: block . tasks
+    @tasks = TaskBuilder new: block . tasks
   }
 
   def Fake read_fakefile: fakefile ("Fakefile") {

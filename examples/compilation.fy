@@ -1,15 +1,15 @@
 require: "fake"
 
-Fake tasks: @{
-  default: @{
+Fake tasks: {
+  default: {
     desc: "Compile all *.fy files"
-    depends: []
+    depends: ['clean]
     run: @{
       sh: ("fancy", "-c", Directory find: "./**/*.fy")
     }
   }
 
-  clean: @{
+  clean: {
     desc: "Clean all *.fyc files"
     run: @{
       sh: ("rm", "-rf", Directory find: "./**/*.fyc")
