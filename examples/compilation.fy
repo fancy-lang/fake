@@ -1,5 +1,3 @@
-require: "fake"
-
 Fake tasks: {
   default: {
     desc: "Compile all *.fy files"
