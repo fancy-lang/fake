@@ -52,11 +52,11 @@ Fake tasks: {
   }
 
   task_b: {
-     desc: "This tasks depends on task_a"
-     depends: 'task_a # pass an array of task names if you depend on more than one task
-     run: {
-       "Running task b" println
-     }
+    desc: "This tasks depends on task_a"
+    depends: 'task_a # pass an array of task names if you depend on more than one task
+    run: {
+      "Running task b" println
+    }
   }
 }
 ```
