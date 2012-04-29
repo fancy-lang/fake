@@ -9,8 +9,7 @@ class Fake {
       def parse_option: opt {
         if: (@argv index: opt) then: |idx| {
           @argv remove_at: idx
-          val = @argv[idx]
-          @argv remove_at: idx
+          @argv remove_at: idx # return value
         } else: {
           Defaults[opt]
         }
