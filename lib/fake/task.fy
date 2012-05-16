@@ -3,8 +3,12 @@ class Fake {
     include: TaskUtils
 
     read_write_slots: ('name, 'description, 'block, 'dependencies)
-    def initialize: @name description: @description block: @block ({}) dependencies: @dependencies ([]) {
+
+    def initialize: block {
+      block call: [self]
       @name = @name to_s
+      { @dependencies = [] } unless: @dependencies
+      { @block = {} } unless: @block
     }
 
     def ran? {

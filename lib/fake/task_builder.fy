@@ -34,7 +34,13 @@ class Fake {
 
         # handle_namespace
         if: run_block then: {
-          @tasks[name to_s]: $ Task new: name description: desc block: run_block dependencies: dependencies
+          task = Task new: @{
+            name: name
+            description: desc
+            block: run_block
+            dependencies: dependencies
+          }
+          @tasks[name to_s]: task
         } else: {
           ns_tasks = NamespaceBuilder new: body name: name . tasks
           @tasks merge!: ns_tasks
