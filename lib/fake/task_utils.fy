@@ -16,7 +16,6 @@ class Fake {
     }
 
     def cd: path do: block {
-      curr_dir = `pwd`
       let: '*fake_path* be: path in: {
         block call: [path]
       }

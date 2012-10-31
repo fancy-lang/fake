@@ -15,17 +15,6 @@ class Fake {
     def initialize: @block {
       @tasks = <[]>
       tasks_hash = @block to_hash
-      helpers = tasks_hash fetch: 'helpers else: { <[]> }
-      tasks_hash delete: 'helpers
-      helpers to_hash each: |name block| {
-        match block arity {
-          case 0 -> Task define_method: (name to_s) with: block
-          case _ -> Task define_method: (name to_s + ":") with: |args| {
-            block call: (args to_a) with_receiver: self
-          }
-        }
-      }
-
       tasks_hash map: |name body| {
         task_opts = body to_hash
         desc = task_opts fetch: 'desc else: { "" }
