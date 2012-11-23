@@ -5,5 +5,5 @@ Fancy Package Specification new: "fake" with: {
   include_files: ["lib/fake.fy"]
   description: "Fancy automation and build tool, inspired by Ruby's Rake."
   homepage: "http://www.fancy-lang.org/"
-  version: "0.1.3"
+  version: "0.1.4"
 }
