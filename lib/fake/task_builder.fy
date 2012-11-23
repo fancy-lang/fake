@@ -5,7 +5,7 @@ class Fake {
       @tasks = TaskBuilder new: @body . tasks map: |name task| {
         nested_name = "#{@name}:#{name}"
         task name: nested_name
-        (nested_name , task)
+        [nested_name, task]
       } . to_hash
     }
   }
@@ -34,7 +34,7 @@ class Fake {
           ns_tasks = NamespaceBuilder new: body name: name . tasks
           @tasks merge!: ns_tasks
         }
-     }
+      }
     }
   }
 }
